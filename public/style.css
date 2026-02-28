@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.converter {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.currencies-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+
+.currencies-row .input-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.currencies-row .input-group label {
+    margin-bottom: 8px;
+}
+
+.currencies-row .input-group select {
+    width: 100%;
+}
+
+.swap-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.swap-btn:hover {
+    background: #764ba2;
+    transform: rotate(180deg);
+}
+
+.swap-btn:active {
+    transform: scale(0.95) rotate(180deg);
+}
+
+.result {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#resultText {
+    font-size: 24px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.exchange-rate {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 14px;
+}
+
+.publish-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publish-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.publish-btn:active {
+    transform: translateY(0);
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.share-link {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    word-break: break-all;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+    border: 2px solid #e0e0e0;
+}
+
+.copy-btn {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #764ba2;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .converter {
+        padding: 25px;
+    }
+
+    #resultText {
+        font-size: 20px;
+    }
+
+    .currencies-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .swap-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+}
